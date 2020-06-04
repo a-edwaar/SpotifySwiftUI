@@ -24,6 +24,7 @@ struct LibrarySubCategoryTextView: View {
                 .frame(height: 2)
                 .offset(x: self.indicatorOffset)
                 .foregroundColor(librarySubCategoryRouter.subCategorys[librarySubCategoryRouter.subCategory] == subCategoryText ? .green : .clear)
+                .animation(.none)
         }.fixedSize().padding(.leading)
     }
 }

@@ -8,17 +8,21 @@
 
 import SwiftUI
 
-struct PagerView<Content: View, G: Gesture>: View {
+struct PagerView<Content: View>: View {
+    var categoryPage = false
     let content: Content
-    let gesture: G
     @Binding var translation: CGFloat
     @EnvironmentObject var libraryCategoryRouter : LibraryCategoryRouter
     @EnvironmentObject var librarySubCategoryRouter : LibrarySubCategoryRouter
 
-
-    init(@ViewBuilder content: () -> Content, gesture: G, translation: Binding<CGFloat>) {
+    init(@ViewBuilder content: () -> Content, translation: Binding<CGFloat>) {
         self.content = content()
-        self.gesture = gesture
+        self._translation = translation
+    }
+    
+    init(categoryPage: Bool, @ViewBuilder content: () -> Content, translation: Binding<CGFloat>) {
+        self.categoryPage = categoryPage
+        self.content = content()
         self._translation = translation
     }
 
@@ -28,10 +32,9 @@ struct PagerView<Content: View, G: Gesture>: View {
                 self.content.frame(width: geometry.size.width)
             }
             .frame(width: geometry.size.width, alignment: .leading)
-            .offset(x: -CGFloat(self.librarySubCategoryRouter.subCategory) * geometry.size.width)
+            .offset(x: self.categoryPage ? (-CGFloat(self.libraryCategoryRouter.category) * geometry.size.width) : (-CGFloat(self.librarySubCategoryRouter.subCategory) * geometry.size.width))
             .offset(x: self.translation)
             .animation(.easeInOut)
-            .gesture(self.gesture)
         }
     }
 }
@@ -44,28 +47,12 @@ struct PagerView_Previews: PreviewProvider {
         @EnvironmentObject var libraryCategoryRouter : LibraryCategoryRouter
         @EnvironmentObject var librarySubCategoryRouter : LibrarySubCategoryRouter
         @State var translation : CGFloat = 0
+        @State var indicatorOffset : CGFloat = 0
         var body: some View {
-            GeometryReader { geometry in
-                
-                PagerView(content: {
-                LibrarySubCategoryView()
-                LibrarySubCategoryView()
-                LibrarySubCategoryView()
-                }, gesture: DragGesture().onChanged{ (value) in
-                    self.translation = value.translation.width
-                }.onEnded { value in
-                    let offset = value.translation.width / geometry.size.width
-                    let newIndex = (CGFloat(self.librarySubCategoryRouter.subCategory) - offset).rounded()
-                    let currentIndex = min(max(Int(newIndex), 0), 2)
-                    if currentIndex == self.librarySubCategoryRouter.subCategory && currentIndex == 2 {
-                        /// we are at the end
-                        self.libraryCategoryRouter.category = 1
-                    }else{
-                        self.librarySubCategoryRouter.subCategory = currentIndex
-                    }
-                    self.translation = 0
-                }, translation: self.$translation ).environmentObject(LibraryCategoryRouter()).environmentObject(LibrarySubCategoryRouter())
-            }
+            PagerView(categoryPage: true, content: {
+                Text("hello")
+                Text("hello a")
+            }, translation: self.$translation).environmentObject(LibraryCategoryRouter()).environmentObject(LibrarySubCategoryRouter())
         }
     }
 }

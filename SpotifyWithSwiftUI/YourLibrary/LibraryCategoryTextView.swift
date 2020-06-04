@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LibraryCategoryTextView: View {
     @EnvironmentObject var libraryCategoryRouter : LibraryCategoryRouter
-    
+    @EnvironmentObject var librarySubCategoryRouter : LibrarySubCategoryRouter
     var body: some View {
         HStack{
             Text("Music")
@@ -18,12 +18,14 @@ struct LibraryCategoryTextView: View {
                 .foregroundColor(libraryCategoryRouter.categorys[libraryCategoryRouter.category] == "Music" ? .primary : .secondary)
                 .onTapGesture {
                     self.libraryCategoryRouter.category = 0
+                    self.librarySubCategoryRouter.subCategory = 0
                 }
             Text("Podcasts")
                 .font(.largeTitle).bold()
                 .foregroundColor(libraryCategoryRouter.categorys[libraryCategoryRouter.category] == "Podcasts" ? .primary : .secondary)
                 .onTapGesture {
                     self.libraryCategoryRouter.category = 1
+                    self.librarySubCategoryRouter.subCategory = 3
                 }
             Spacer()
         }.padding([.leading, .top])
@@ -32,6 +34,6 @@ struct LibraryCategoryTextView: View {
 
 struct LibraryCategoryTextView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryCategoryTextView().environmentObject(LibraryCategoryRouter())
+        LibraryCategoryTextView().environmentObject(LibraryCategoryRouter()).environmentObject(LibrarySubCategoryRouter())
     }
 }

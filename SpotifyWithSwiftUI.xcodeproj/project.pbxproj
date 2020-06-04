@@ -14,6 +14,15 @@
 		CA37516B2482731E00B3557C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA37516A2482731E00B3557C /* Preview Assets.xcassets */; };
 		CA37516E2482731E00B3557C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA37516C2482731E00B3557C /* LaunchScreen.storyboard */; };
 		CA3751792482731E00B3557C /* SpotifyWithSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751782482731E00B3557C /* SpotifyWithSwiftUIUITests.swift */; };
+		CA37518924827EA800B3557C /* LibraryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518824827EA800B3557C /* LibraryCategoryView.swift */; };
+		CA37518B2482805F00B3557C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518A2482805F00B3557C /* LibraryView.swift */; };
+		CA37518D24829D8400B3557C /* LibraryViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518C24829D8400B3557C /* LibraryViewRouter.swift */; };
+		CA37518F2482BF1200B3557C /* LibrarySubCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518E2482BF1200B3557C /* LibrarySubCategoryView.swift */; };
+		CA3751922483BADD00B3557C /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751912483BADD00B3557C /* MediaContentView.swift */; };
+		CA3751942483BDB300B3557C /* LibraryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751932483BDB300B3557C /* LibraryFilterView.swift */; };
+		CA37519624844DCF00B3557C /* LibrarySubCategoryTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37519524844DCF00B3557C /* LibrarySubCategoryTextView.swift */; };
+		CA3751982484FCB900B3557C /* LibraryCategoryTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751972484FCB900B3557C /* LibraryCategoryTextView.swift */; };
+		CA37519A2485A25500B3557C /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751992485A25500B3557C /* PagerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,15 @@
 		CA3751742482731E00B3557C /* SpotifyWithSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyWithSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3751782482731E00B3557C /* SpotifyWithSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyWithSwiftUIUITests.swift; sourceTree = "<group>"; };
 		CA37517A2482731E00B3557C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA37518824827EA800B3557C /* LibraryCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCategoryView.swift; sourceTree = "<group>"; };
+		CA37518A2482805F00B3557C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		CA37518C24829D8400B3557C /* LibraryViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewRouter.swift; sourceTree = "<group>"; };
+		CA37518E2482BF1200B3557C /* LibrarySubCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySubCategoryView.swift; sourceTree = "<group>"; };
+		CA3751912483BADD00B3557C /* MediaContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentView.swift; sourceTree = "<group>"; };
+		CA3751932483BDB300B3557C /* LibraryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFilterView.swift; sourceTree = "<group>"; };
+		CA37519524844DCF00B3557C /* LibrarySubCategoryTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySubCategoryTextView.swift; sourceTree = "<group>"; };
+		CA3751972484FCB900B3557C /* LibraryCategoryTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCategoryTextView.swift; sourceTree = "<group>"; };
+		CA3751992485A25500B3557C /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,8 @@
 		CA3751602482731C00B3557C /* SpotifyWithSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CA3751902483BA8100B3557C /* Components */,
+				CA375183248277E500B3557C /* YourLibrary */,
 				CA3751612482731C00B3557C /* AppDelegate.swift */,
 				CA3751632482731C00B3557C /* SceneDelegate.swift */,
 				CA3751652482731C00B3557C /* ContentView.swift */,
@@ -107,6 +127,29 @@
 			path = SpotifyWithSwiftUIUITests;
 			sourceTree = "<group>";
 		};
+		CA375183248277E500B3557C /* YourLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				CA37518824827EA800B3557C /* LibraryCategoryView.swift */,
+				CA37518A2482805F00B3557C /* LibraryView.swift */,
+				CA37518C24829D8400B3557C /* LibraryViewRouter.swift */,
+				CA37518E2482BF1200B3557C /* LibrarySubCategoryView.swift */,
+				CA3751932483BDB300B3557C /* LibraryFilterView.swift */,
+				CA37519524844DCF00B3557C /* LibrarySubCategoryTextView.swift */,
+				CA3751972484FCB900B3557C /* LibraryCategoryTextView.swift */,
+				CA3751992485A25500B3557C /* PagerView.swift */,
+			);
+			path = YourLibrary;
+			sourceTree = "<group>";
+		};
+		CA3751902483BA8100B3557C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CA3751912483BADD00B3557C /* MediaContentView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +166,8 @@
 			dependencies = (
 			);
 			name = SpotifyWithSwiftUI;
+			packageProductDependencies = (
+			);
 			productName = SpotifyWithSwiftUI;
 			productReference = CA37515E2482731C00B3557C /* SpotifyWithSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +218,8 @@
 				Base,
 			);
 			mainGroup = CA3751552482731C00B3557C;
+			packageReferences = (
+			);
 			productRefGroup = CA37515F2482731C00B3557C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,9 +255,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA37519624844DCF00B3557C /* LibrarySubCategoryTextView.swift in Sources */,
 				CA3751622482731C00B3557C /* AppDelegate.swift in Sources */,
+				CA3751942483BDB300B3557C /* LibraryFilterView.swift in Sources */,
+				CA37518924827EA800B3557C /* LibraryCategoryView.swift in Sources */,
+				CA37519A2485A25500B3557C /* PagerView.swift in Sources */,
+				CA3751982484FCB900B3557C /* LibraryCategoryTextView.swift in Sources */,
 				CA3751642482731C00B3557C /* SceneDelegate.swift in Sources */,
+				CA37518F2482BF1200B3557C /* LibrarySubCategoryView.swift in Sources */,
+				CA37518B2482805F00B3557C /* LibraryView.swift in Sources */,
+				CA37518D24829D8400B3557C /* LibraryViewRouter.swift in Sources */,
 				CA3751662482731C00B3557C /* ContentView.swift in Sources */,
+				CA3751922483BADD00B3557C /* MediaContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +423,7 @@
 				DEVELOPMENT_TEAM = 962R5W99CR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SpotifyWithSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArchieEdwards.SpotifyWithSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -387,6 +444,7 @@
 				DEVELOPMENT_TEAM = 962R5W99CR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SpotifyWithSwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArchieEdwards.SpotifyWithSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
