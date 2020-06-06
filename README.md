@@ -1,2 +1,2 @@
 # SpotifySwiftUI
-Replicating Spotify's Your Library view in SwiftUI
+Replicating Spotify's Your Library animation in SwiftUI
