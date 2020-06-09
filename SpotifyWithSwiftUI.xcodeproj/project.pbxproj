@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,15 +14,11 @@
 		CA37516B2482731E00B3557C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA37516A2482731E00B3557C /* Preview Assets.xcassets */; };
 		CA37516E2482731E00B3557C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA37516C2482731E00B3557C /* LaunchScreen.storyboard */; };
 		CA3751792482731E00B3557C /* SpotifyWithSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751782482731E00B3557C /* SpotifyWithSwiftUIUITests.swift */; };
-		CA37518924827EA800B3557C /* LibraryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518824827EA800B3557C /* LibraryCategoryView.swift */; };
-		CA37518B2482805F00B3557C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518A2482805F00B3557C /* LibraryView.swift */; };
-		CA37518D24829D8400B3557C /* LibraryViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518C24829D8400B3557C /* LibraryViewRouter.swift */; };
-		CA37518F2482BF1200B3557C /* LibrarySubCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37518E2482BF1200B3557C /* LibrarySubCategoryView.swift */; };
 		CA3751922483BADD00B3557C /* MediaContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751912483BADD00B3557C /* MediaContentView.swift */; };
-		CA3751942483BDB300B3557C /* LibraryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751932483BDB300B3557C /* LibraryFilterView.swift */; };
-		CA37519624844DCF00B3557C /* LibrarySubCategoryTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37519524844DCF00B3557C /* LibrarySubCategoryTextView.swift */; };
-		CA3751982484FCB900B3557C /* LibraryCategoryTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751972484FCB900B3557C /* LibraryCategoryTextView.swift */; };
-		CA37519A2485A25500B3557C /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3751992485A25500B3557C /* PagerView.swift */; };
+		CAA89B65248D08EB0084A9D2 /* YourLIbraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA89B64248D08EB0084A9D2 /* YourLIbraryView.swift */; };
+		CAA89B68248D0A850084A9D2 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = CAA89B67248D0A850084A9D2 /* SwiftUIPager */; };
+		CAA89B6A248D8B880084A9D2 /* SubCategoryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA89B69248D8B880084A9D2 /* SubCategoryText.swift */; };
+		CAA89B6C248D996E0084A9D2 /* CategoryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA89B6B248D996E0084A9D2 /* CategoryText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,15 +43,10 @@
 		CA3751742482731E00B3557C /* SpotifyWithSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyWithSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3751782482731E00B3557C /* SpotifyWithSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyWithSwiftUIUITests.swift; sourceTree = "<group>"; };
 		CA37517A2482731E00B3557C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA37518824827EA800B3557C /* LibraryCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCategoryView.swift; sourceTree = "<group>"; };
-		CA37518A2482805F00B3557C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		CA37518C24829D8400B3557C /* LibraryViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewRouter.swift; sourceTree = "<group>"; };
-		CA37518E2482BF1200B3557C /* LibrarySubCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySubCategoryView.swift; sourceTree = "<group>"; };
 		CA3751912483BADD00B3557C /* MediaContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaContentView.swift; sourceTree = "<group>"; };
-		CA3751932483BDB300B3557C /* LibraryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFilterView.swift; sourceTree = "<group>"; };
-		CA37519524844DCF00B3557C /* LibrarySubCategoryTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySubCategoryTextView.swift; sourceTree = "<group>"; };
-		CA3751972484FCB900B3557C /* LibraryCategoryTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCategoryTextView.swift; sourceTree = "<group>"; };
-		CA3751992485A25500B3557C /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		CAA89B64248D08EB0084A9D2 /* YourLIbraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLIbraryView.swift; sourceTree = "<group>"; };
+		CAA89B69248D8B880084A9D2 /* SubCategoryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryText.swift; sourceTree = "<group>"; };
+		CAA89B6B248D996E0084A9D2 /* CategoryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA89B68248D0A850084A9D2 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,10 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				CA3751902483BA8100B3557C /* Components */,
-				CA375183248277E500B3557C /* YourLibrary */,
 				CA3751612482731C00B3557C /* AppDelegate.swift */,
 				CA3751632482731C00B3557C /* SceneDelegate.swift */,
 				CA3751652482731C00B3557C /* ContentView.swift */,
+				CAA89B64248D08EB0084A9D2 /* YourLIbraryView.swift */,
+				CAA89B69248D8B880084A9D2 /* SubCategoryText.swift */,
+				CAA89B6B248D996E0084A9D2 /* CategoryText.swift */,
 				CA3751672482731E00B3557C /* Assets.xcassets */,
 				CA37516C2482731E00B3557C /* LaunchScreen.storyboard */,
 				CA37516F2482731E00B3557C /* Info.plist */,
@@ -125,21 +119,6 @@
 				CA37517A2482731E00B3557C /* Info.plist */,
 			);
 			path = SpotifyWithSwiftUIUITests;
-			sourceTree = "<group>";
-		};
-		CA375183248277E500B3557C /* YourLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				CA37518824827EA800B3557C /* LibraryCategoryView.swift */,
-				CA37518A2482805F00B3557C /* LibraryView.swift */,
-				CA37518C24829D8400B3557C /* LibraryViewRouter.swift */,
-				CA37518E2482BF1200B3557C /* LibrarySubCategoryView.swift */,
-				CA3751932483BDB300B3557C /* LibraryFilterView.swift */,
-				CA37519524844DCF00B3557C /* LibrarySubCategoryTextView.swift */,
-				CA3751972484FCB900B3557C /* LibraryCategoryTextView.swift */,
-				CA3751992485A25500B3557C /* PagerView.swift */,
-			);
-			path = YourLibrary;
 			sourceTree = "<group>";
 		};
 		CA3751902483BA8100B3557C /* Components */ = {
@@ -167,6 +146,7 @@
 			);
 			name = SpotifyWithSwiftUI;
 			packageProductDependencies = (
+				CAA89B67248D0A850084A9D2 /* SwiftUIPager */,
 			);
 			productName = SpotifyWithSwiftUI;
 			productReference = CA37515E2482731C00B3557C /* SpotifyWithSwiftUI.app */;
@@ -219,6 +199,7 @@
 			);
 			mainGroup = CA3751552482731C00B3557C;
 			packageReferences = (
+				CAA89B66248D0A850084A9D2 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = CA37515F2482731C00B3557C /* Products */;
 			projectDirPath = "";
@@ -255,16 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA37519624844DCF00B3557C /* LibrarySubCategoryTextView.swift in Sources */,
 				CA3751622482731C00B3557C /* AppDelegate.swift in Sources */,
-				CA3751942483BDB300B3557C /* LibraryFilterView.swift in Sources */,
-				CA37518924827EA800B3557C /* LibraryCategoryView.swift in Sources */,
-				CA37519A2485A25500B3557C /* PagerView.swift in Sources */,
-				CA3751982484FCB900B3557C /* LibraryCategoryTextView.swift in Sources */,
+				CAA89B6A248D8B880084A9D2 /* SubCategoryText.swift in Sources */,
 				CA3751642482731C00B3557C /* SceneDelegate.swift in Sources */,
-				CA37518F2482BF1200B3557C /* LibrarySubCategoryView.swift in Sources */,
-				CA37518B2482805F00B3557C /* LibraryView.swift in Sources */,
-				CA37518D24829D8400B3557C /* LibraryViewRouter.swift in Sources */,
+				CAA89B6C248D996E0084A9D2 /* CategoryText.swift in Sources */,
+				CAA89B65248D08EB0084A9D2 /* YourLIbraryView.swift in Sources */,
 				CA3751662482731C00B3557C /* ContentView.swift in Sources */,
 				CA3751922483BADD00B3557C /* MediaContentView.swift in Sources */,
 			);
@@ -527,6 +503,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAA89B66248D0A850084A9D2 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAA89B67248D0A850084A9D2 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA89B66248D0A850084A9D2 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA3751562482731C00B3557C /* Project object */;
 }

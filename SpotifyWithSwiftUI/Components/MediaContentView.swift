@@ -9,33 +9,22 @@
 import SwiftUI
 
 struct MediaContentView: View {
-    //var image : Image
     var mediaTitle : String
     var mediaSubtitle : String
+    var colours : [Color] = [.red, .orange, .green, .pink, .purple, .yellow]
     var body: some View {
         HStack{
             Rectangle()
-                .frame(width: UIScreen.main.bounds.size.width/6 , height: UIScreen.main.bounds.size.height/10)
+                .frame(width: UIScreen.main.bounds.size.width/6 , height: UIScreen.main.bounds.size.height/12)
+                .foregroundColor(colours[Int.random(in: 0 ... 5 )])
             VStack(alignment: .leading){
-                Text(mediaTitle).font(.headline).lineLimit(1)
-                Text(mediaSubtitle).font(.footnote).bold().foregroundColor(.secondary).lineLimit(1)
+                Text(mediaTitle).font(.headline).fixedSize(horizontal: true, vertical: false)
+                Text(mediaSubtitle).font(.footnote).bold().foregroundColor(.secondary).fixedSize(horizontal: true, vertical: false)
             }
             Spacer()
         }
     }
 }
-
-//extension CGFloat {
-//    static func random() -> CGFloat {
-//        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-//    }
-//}
-//
-//extension Color {
-//    static func random() -> Color {
-//        return Color(.sRGB, red: , green: .random(), blue: .random(), opacity: 1.0)
-//    }
-//}
 
 struct MediaContentView_Previews: PreviewProvider {
     static var previews: some View {
