@@ -12,10 +12,9 @@ import SwiftUIPager
 struct YourLibraryView: View {
 
     @State var page: Int = 0 //// keeps track of which category index we are at
-    @State var nestedPages: [Int] = [0, 0] /// keeps track of which sub category index we are at
-    @State var allowSubCategoryDragging = true /// a bool to temp switch sub category dragging off when we want to switch category
-    @State var musicOffset : CGFloat = 0
-    @State var podcastsOffset : CGFloat = 0
+    @State var nestedPages: [Int] = [0, 0] /// keeps track of which sub category index we are at for each category
+    @State var indicatorOffsets : [CGFloat] = [0,0] /// keepts track of indicator offsets for each category
+    @State var allowSubCategoryDragging = true
 
     var data = Array(0..<2)
     var nestedData = Array(0..<3)
@@ -27,7 +26,8 @@ struct YourLibraryView: View {
                   data: self.data,
                   id: \.self) { page in
                     self.nestedPager(page)
-            }.onPageChanged({ _ in
+            }
+            .onPageChanged({ _ in
                 self.allowSubCategoryDragging = true
             })
             .swipeInteractionArea(.allAvailable)
@@ -38,32 +38,25 @@ struct YourLibraryView: View {
                     let movingCategoryLeft = self.page == 1 && self.nestedPages[self.page] == 0 && value.translation.width > 0
                     if movingCategoryRight || movingCategoryLeft{
                         self.allowSubCategoryDragging = false
-                    }else{
+                    }
+                    else{
                         let westAsCanBe = self.nestedPages[self.page] == 0 && self.page == 0 && value.translation.width > 0
                         let eastAsCanBe = self.nestedPages[self.page] == 2 && self.page == 1 && value.translation.width < 0
                         if !westAsCanBe && !eastAsCanBe{
                             /// we must be moving sub categorys move the offset for the indicator
-                            if self.page == 0{
-                                self.musicOffset = -value.translation.width/10
-                            }else{
-                                self.podcastsOffset = -value.translation.width/10
-                            }
+                            self.indicatorOffsets[self.page] = -value.translation.width/10
                         }
                     }
                 }
             }).onEnded({ _ in
-                if self.page == 0 {
-                    self.musicOffset = 0
-                }else{
-                    self.podcastsOffset = 0
-                }
+                self.indicatorOffsets[self.page] = 0
             }))
         }
     }
 
     /// nestedPager contains subcategory titles, an indicator and a pager to show subcategory views
     func nestedPager(_ index: Int) -> some View {
-        let binding = Binding<Int>(
+        let currentSubCategory = Binding<Int>(
             get: {
                 self.nestedPages[index]
         }, set: { newValue in
@@ -71,29 +64,26 @@ struct YourLibraryView: View {
             newNestedPages[index] = newValue
             self.nestedPages = newNestedPages
         })
+        
+        let indicatorOffset = Binding<CGFloat>(
+            get: {
+                self.indicatorOffsets[index]
+        }, set: { newValue in
+            var newIndicatorOffsets = self.indicatorOffsets
+            newIndicatorOffsets[index] = newValue
+            self.indicatorOffsets = newIndicatorOffsets
+        })
 
         return VStack(alignment: .leading, spacing: 20){
-            HStack{
-                SubCategoryText(subCategoryText: index == 0 ? "Playlists" : "Episodes" , index: 0, currentIndex: binding, indicatorOffset: index == 0 ? self.$musicOffset : self.$podcastsOffset)
-                SubCategoryText(subCategoryText: index == 0 ? "Albums" : "Downloaded" , index: 1, currentIndex: binding, indicatorOffset: index == 0 ? self.$musicOffset : self.$podcastsOffset)
-                SubCategoryText(subCategoryText: index == 0 ? "Artists" : "Shows" , index: 2, currentIndex: binding, indicatorOffset: index == 0 ? self.$musicOffset : self.$podcastsOffset)
-                Spacer()
-            }
-            Pager(page: binding,
+            SubCategoryText(subCategorys: index == 0 ? ["Playlists", "Albums", "Artists"] : ["Episodes", "Downloads", "Shows"], currentSubCategoryIndex: currentSubCategory, indicatorOffset: indicatorOffset)
+            Pager(page: currentSubCategory,
                   data: self.nestedData,
                   id: \.self) { page in
-                    self.pageView(page)
-            }.allowsDragging(allowSubCategoryDragging)
+                    MediaContentView()
+            }
+            .allowsDragging(allowSubCategoryDragging)
             Spacer()
         }
-    }
-
-    func pageView(_ page: Int) -> some View {
-        ScrollView(.vertical, showsIndicators: true){
-            ForEach(0..<10) {_ in
-                MediaContentView(mediaTitle: "Insert Media", mediaSubtitle: "by Spotify")
-            }
-        }.padding(.leading)
     }
 
 }

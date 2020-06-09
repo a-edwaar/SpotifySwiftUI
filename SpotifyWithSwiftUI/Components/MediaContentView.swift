@@ -9,25 +9,27 @@
 import SwiftUI
 
 struct MediaContentView: View {
-    var mediaTitle : String
-    var mediaSubtitle : String
     var colours : [Color] = [.red, .orange, .green, .pink, .purple, .yellow]
     var body: some View {
-        HStack{
-            Rectangle()
-                .frame(width: UIScreen.main.bounds.size.width/6 , height: UIScreen.main.bounds.size.height/12)
-                .foregroundColor(colours[Int.random(in: 0 ... 5 )])
-            VStack(alignment: .leading){
-                Text(mediaTitle).font(.headline).fixedSize(horizontal: true, vertical: false)
-                Text(mediaSubtitle).font(.footnote).bold().foregroundColor(.secondary).fixedSize(horizontal: true, vertical: false)
+        ScrollView(.vertical, showsIndicators: true){
+            ForEach(0..<10) {_ in
+                HStack{
+                    Rectangle()
+                       .frame(width: UIScreen.main.bounds.size.width/6 , height: UIScreen.main.bounds.size.height/12)
+                        .foregroundColor(self.colours[Int.random(in: 0 ... 5 )])
+                    VStack(alignment: .leading){
+                        Text("Insert Media").font(.headline).fixedSize(horizontal: true, vertical: false)
+                        Text("by Spotify").font(.footnote).bold().foregroundColor(.secondary).fixedSize(horizontal: true, vertical: false)
+                    }
+                    Spacer()
+                }
             }
-            Spacer()
-        }
+        }.padding(.leading)
     }
 }
 
 struct MediaContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MediaContentView(mediaTitle: "Your Kitchen Stereo", mediaSubtitle: "by Spotify")
+        MediaContentView()
     }
 }

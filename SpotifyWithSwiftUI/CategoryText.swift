@@ -12,7 +12,7 @@ struct CategoryText: View {
     @Binding var currentCategoryIndex : Int
     @Binding var nestedPages : [Int]
     var body: some View {
-        HStack{
+        HStack(spacing: 20){
             Text("Music")
                 .font(.largeTitle).bold()
                 .foregroundColor(self.currentCategoryIndex == 0 ? .primary : .secondary)
@@ -38,6 +38,12 @@ struct CategoryText: View {
 
 struct CategoryText_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryText(currentCategoryIndex: .constant(1), nestedPages: .constant([0,0]))
+        CategoryTextPreview()
+    }
+    struct CategoryTextPreview: View {
+        @State var currentCategoryIndex = 0
+        var body: some View{
+            CategoryText(currentCategoryIndex: $currentCategoryIndex, nestedPages: .constant([0,0]))
+        }
     }
 }
